@@ -1,1 +1,3 @@
-Vue.jsの勉強用
+勉強用フォルダ
+・Vue.js
+・Docker
