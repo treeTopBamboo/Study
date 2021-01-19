@@ -1,10 +1,15 @@
 <h3>
   勉強用フォルダ
 </h3>
-Vue.js, Docker<br>
+Vue.jsを使用したページ作成に慣れる<br>
 <ul>
   <li>Study_00</li>
+      Docker使用
   		component使用の基本的な流れ
   <li>Study_01</li>
-  		Vue Router使用の感触を掴む
+  <ol>
+    <li>Vue Router使用の感触を掴む</li>
+    <li>モーダルウィンドウの基礎</li>
+    <li>スロットスコープを使ってみる</li>
+  </ol>
 </ul>
