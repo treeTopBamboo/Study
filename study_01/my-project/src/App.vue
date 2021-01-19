@@ -3,50 +3,28 @@
     <div class="routenavi">
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <router-view />
     </div>
-    <router-view />
     <hello />
     <hr />
+    <modal />
   </div>
 </template>
 
 <script>
 import hello from "./components/HelloWorld";
+import modal from "./components/ModalTest";
 
 export default {
   name: "app",
   components: {
     hello,
+    modal,
   },
 };
 </script>
 
 <style>
-#overlay {
-  /* 要素を重ねた時の順番(小さな数字ほど重ね順が下) */
-  z-index: 1;
-
-  /* 画面全体を覆う設定 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  /* 画面の中央に要素を表示させる設定 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* overlayの要素よりも上に表示させるためz-index=”2″を設定 */
-#content {
-  z-index: 2;
-  width: 50%;
-  padding: 1em;
-  background: #fff;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
