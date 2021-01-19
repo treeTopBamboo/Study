@@ -1,39 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+    <div class="routenavi">
+      <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link>
-      <router-view />
-
-      <!-- モーダルウィンドウ実験 -->
-      <div class="testModal">
-        <button>Click</button>
-        <div id="overlay" v-show="showContent" v-on:click="closeModal">
-          <div id="content">
-            <p>これがモーダルウィンドウです。</p>
-            <button v-on:click="closeModal">close</button>
-          </div>
-        </div>
-      </div>
     </div>
+    <router-view />
+    <hello />
+    <hr />
   </div>
 </template>
 
 <script>
-new Vue({
-  el: ".testModal",
-  data: {
-    showContent: false,
+import hello from "./components/HelloWorld";
+
+export default {
+  name: "app",
+  components: {
+    hello,
   },
-  methods: {
-    openModal: function () {
-      this.showContent = true;
-    },
-    closeModal: function () {
-      this.showContent = false;
-    },
-  },
-});
+};
 </script>
 
 <style>
@@ -69,14 +54,11 @@ new Vue({
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-}
-#nav a {
+#routenavi a {
   font-weight: bold;
   color: #2c3e50;
 }
-#nav a.router-link-exact-active {
+#routenavi a.router-link-exact-active {
   color: #42b983;
 }
 </style>
