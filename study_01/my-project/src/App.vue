@@ -5,20 +5,27 @@
       <router-link to="/about">About</router-link>
       <router-view />
     </div>
-    <hello />
+
+    <hr />
+    <!-- 親側では<v-slot:default>で受け取ることで、子コンポーネントのjpNameの値をとることができる -->
+    <!-- <v-slot:default="slotProps">のslotPropsは任意なので、重複がなければどんな文字列でも可 -->
+    <slotTest v-slot:default="slotProps">
+      {{ slotProps.userNm.jpName }}
+    </slotTest>
+
     <hr />
     <modal />
   </div>
 </template>
 
 <script>
-import hello from "./components/HelloWorld";
+import slotTest from "./components/SlotScopeTest.vue";
 import modal from "./components/ModalTest";
 
 export default {
   name: "app",
   components: {
-    hello,
+    slotTest,
     modal,
   },
 };
